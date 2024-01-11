@@ -1,0 +1,12 @@
+<!-- app/templates/leave_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Leave Requests</h2>
+    <ul>
+        {% for leave_request in leave_requests %}
+            <li>{{ leave_request.reason }} - {{ leave_request.date }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('request_leave') }}">Request Leave</a>
+{% endblock %}
