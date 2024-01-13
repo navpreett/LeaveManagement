@@ -1,7 +1,5 @@
 # app/models.py
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from app import db
 
 class LeaveRequest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
