@@ -1,12 +1,9 @@
 from flask import Flask
-from config import Config
+from config import SECRET_KEY, SQLALCHEMY_DATABASE_URI
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
 
 app = Flask(__name__)
-app.config.from_object(Config)  # Use Config class for configuration
+app.config['SECRET_KEY'] = SECRET_KEY
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 
 db = SQLAlchemy(app)
-login_manager = LoginManager(app)  # Initialize LoginManager after creating the app instance
-
-from app import routes, models

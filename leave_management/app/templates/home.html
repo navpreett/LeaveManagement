@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Leave Request App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .app-container {
+            text-align: center;
+        }
+
+        .app-heading {
+            color: #3498db;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .app-paragraph {
+            color: #555;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-login {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            background-color: #3498db; 
+        }
+
+        .btn-register {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            background-color: #28a745; 
+        }
+
+        .btn-request-leave {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            background-color: #ffc107; 
+        }
+
+        .btn-login:hover {
+            background-color: #217dbb;
+        }
+
+        .btn-register:hover {
+            background-color: #218838;
+        }
+
+        .btn-request-leave:hover {
+            background-color: #d39e00;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <h1 class="display-4 app-heading">Welcome to Leave Request App</h1>
+        <p class="lead app-paragraph">Submit your leave requests below!</p>
+
+        <a class="btn btn-lg btn-custom btn-login" href="{{ url_for('login') }}" role="button">Login</a>
+        <a class="btn btn-lg btn-custom btn-register" href="{{ url_for('register') }}" role="button">Register</a>
+        <a class="btn btn-lg btn-custom btn-request-leave" href="{{ url_for('request_leave') }}" role="button">Request Leave</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
