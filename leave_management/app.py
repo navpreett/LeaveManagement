@@ -1,14 +1,16 @@
 # app.py
+
 from flask import Flask, render_template, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
+from config import Config  # Import the Config class
 
 app = Flask(__name__)
-app.config.from_object('config')  # Load configurations from config.py
+app.config.from_object(Config)  # Load configurations from Config class
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
-login_manager.login_view = 'login'  # 'login' is the endpoint for the login route
+login_manager.login_view = 'login' 
 
 # User Model
 class User(db.Model, UserMixin):
@@ -49,5 +51,5 @@ def index():
     return f'Hello, {current_user.username}! This is the protected page.'
 
 if __name__ == '__main__':
-    db.create_all()
-    app.run(debug=True)
+#    db.create_all()
+    app.run(port=3333)

@@ -1,0 +1,3 @@
+selfcord.py
+wikipedia
+python-dotenv

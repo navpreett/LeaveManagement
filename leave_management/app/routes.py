@@ -22,7 +22,6 @@ def request_leave():
         reason = request.form.get('reason')
         date_str = request.form.get('date')
 
-        # Convert the string date to a Python date object
         date_obj = datetime.strptime(date_str, '%Y-%m-%d').date()
 
         new_leave_request = LeaveRequest(reason=reason, date=date_obj, user=current_user)
